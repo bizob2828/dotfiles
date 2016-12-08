@@ -1,0 +1,25 @@
+[user]
+	name = Bob Evans
+	email = bizob2828@yahoo.com
+
+[credential]
+helper = /opt/boxen/bin/boxen-git-credential
+
+[core]
+excludesfile = /opt/boxen/config/git/gitignore
+
+#[hub]
+#protocol = https
+
+[hub]
+protocol = https
+[push]
+	default = simple
+
+[alias]
+  st = status
+  dif = diff --staged
+  last = log -1 HEAD
+  unstage = reset HEAD --
+  undo = reset --hard HEAD
+  uncommit = reset HEAD~
