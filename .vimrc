@@ -20,12 +20,12 @@ call vundle#begin()
  Plugin 'scrooloose/nerdtree'
  Plugin 'scrooloose/syntastic'
  Plugin 'tpope/vim-surround'
- Plugin 'Valloric/YouCompleteMe'
  Plugin 'jelera/vim-javascript-syntax'
  Plugin 'marijnh/tern_for_vim'
+ Plugin 'Valloric/YouCompleteMe'
  Plugin 'groenewege/vim-less'
  Plugin 'othree/yajs.vim'
- Plugin 'ctrlpvim/ctrlp.vim'
+ Plugin 'kien/ctrlp.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -42,6 +42,9 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 map <C-l> :NERDTreeToggle<CR>
+let g:ycm_server_keep_logfiles = 1
+let g:ycm_server_use_vim_stdout = 1
+let g:ycm_server_log_level = 'debug'
 let g:ycm_add_preview_to_completeopt=0
 let g:ycm_confirm_extra_conf=0
 set completeopt-=preview

@@ -1,20 +1,28 @@
 [user]
 	name = Bob Evans
-	email = bizob2828@yahoo.com
+	email = robert.evans25@gmail.com
+
+[credential]
+	helper = osxkeychain
 
 [core]
-excludesfile = ~/.gitignore
+	excludesfile = /Users/bevans/.gitignore_global
+
+#[hub]
+#protocol = https
 
 [hub]
 protocol = https
-
 [push]
-default = simple
+	default = simple
+  followTags = true
 
 [alias]
-st = status
-dif = diff --staged
-last = log -1 HEAD
-unstage = reset HEAD --
-undo = reset --hard HEAD
-uncommit = reset HEAD~
+  st = status
+  dif = diff --staged
+  last = log -1 HEAD
+  unstage = reset HEAD --
+  undo = reset --hard HEAD
+  uncommit = reset HEAD~
+  c = commit -m
+  up = "pull --rebase --autostash"
