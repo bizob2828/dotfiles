@@ -12,6 +12,7 @@ vim +PluginInstall +qall
 Install these deps first
 ```
 pip install powerline-status --user
+pip install powerline-gitstatus # set up the git status in the shell https://github.com/jaspernbrouwer/powerline-gitstatus
 brew install vim
 ```
 

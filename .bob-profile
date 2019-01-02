@@ -2,11 +2,11 @@
 powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
-. /Users/bevans/Library/Python/2.7/lib/python/site-packages/powerline/bindings/bash/powerline.sh
+. /Users/bobevans/Library/Python/2.7/lib/python/site-packages/powerline/bindings/bash/powerline.sh
 
 #git goodies
 export GIT_MERGE_AUTOEDIT=no
-source ~/git-completion.bash
+source /Users/bobevans/code/dotfiles/git-completion.bash
 
 #git aliases
 alias gf='git fetch --verbose --prune'
@@ -15,3 +15,5 @@ alias gco='git checkout'
 alias gu='git up'
 alias gc='git c'
 alias gp='git push origin'
+
+alias mybox="ssh -p49155 bizob2828@bob-pc"
