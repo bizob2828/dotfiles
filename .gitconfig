@@ -26,3 +26,6 @@ protocol = https
   uncommit = reset HEAD~
   c = commit -m
   up = "pull --rebase --autostash"
+
+[fetch]
+  prune = true
