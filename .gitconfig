@@ -1,12 +1,12 @@
 [user]
-	name = Bob Evans
-	email = robert.evans25@gmail.com
+  name = Bob Evans
+  email = robert.evans25@gmail.com
 
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 
 [core]
-	excludesfile = /Users/bobevans/.gitignore_global
+  excludesfile = /Users/bobevans/.gitignore_global
 
 [hub]
   protocol = https
@@ -15,7 +15,7 @@
   prune = true
 
 [push]
-	default = current
+  default = current
   followTags = true
 
 [alias]
