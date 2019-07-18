@@ -1,27 +1,17 @@
-# VisualStudio Code
-.vscode
-
-# Idea stuff
-my-idea/
-my-idea/**
-.idea/
-.idea/**
-.settings/**
-
-# OS files
 .DS_Store
 .DS_Store?
-._*
 .Spotlight-V100
 .Trashes
-Icon?
-.tern-port
-
-# Editor Ignores:
-# vim swap file
+._*
+Icon
+Thumbs.db
+ehthumbs.db
 *.swp
 *.swo
-*.swn
-# temp files
+*.orig
 *~
-*#
+\#*\#
+/tags
+/.bundle/
+
+
