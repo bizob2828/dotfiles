@@ -1,20 +1,21 @@
 [user]
-  name = Bob Evans
-  email = robert.evans25@gmail.com
+	name = Bob Evans
+	email = robert.evans25@gmail.com
 
 [credential]
-  helper = osxkeychain
+	helper = osxkeychain
 
 [core]
-  excludesfile = /Users/bevans/.gitignore_global
-
-#[hub]
-#protocol = https
+	excludesfile = /Users/bobevans/.gitignore_global
 
 [hub]
-protocol = https
+  protocol = https
+
+[fetch]
+  prune = true
+
 [push]
-  default = simple
+	default = current
   followTags = true
 
 [alias]
@@ -25,7 +26,7 @@ protocol = https
   undo = reset --hard HEAD
   uncommit = reset HEAD~
   c = commit -m
+  ca = commit --ammend -C HEAD
   up = "pull --rebase --autostash"
-
-[fetch]
-  prune = true
+  br = "symbolic-ref --short HEAD"
+  cleanup = !git remote prune origin && git gc && git clean -dfx && git stash clear
