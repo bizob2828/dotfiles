@@ -16,6 +16,7 @@ alias gu='git up'
 alias gc='git c'
 alias gp='git push -u'
 alias gpf='git push --force-with-lease origin'
+alias gst='git st'
 
 alias mybox="ssh -p49155 bizob2828@bob-pc"
 alias prune-branches="git fetch -p && for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done"
