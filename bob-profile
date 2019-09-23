@@ -1,8 +1,16 @@
-#powerline for shell helpers
-powerline-daemon -q
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1
-. /Users/bobevans/Library/Python/2.7/lib/python/site-packages/powerline/bindings/bash/powerline.sh
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+
+# loads fzf
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Binds Ctrl+t to open file in vim
+vim_fzf() {
+vim "$(fzf)"
+}
+
+bind -x '"\C-t": vim_fzf'
 
 #git goodies
 export GIT_MERGE_AUTOEDIT=no
@@ -19,7 +27,10 @@ alias gpf='git push --force-with-lease origin'
 alias gst='git st'
 alias gfb='git find $1'
 alias gbr='git br'
+alias gdv='git diff | vim -'
 
+alias ls=exa # ls sucks exa ftw!
 alias mybox="ssh -p49155 bizob2828@bob-pc"
 alias prune-branches="git fetch -p && for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done"
 export PATH=$PATH:/Users/bobevans/code/gitplus/commands
+eval "$(starship init bash)"
