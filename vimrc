@@ -1,7 +1,11 @@
 syntax on
 au BufRead,BufNewFile *.a set filetype=perl
 au BufRead,BufNewFile *.t set filetype=perl
+
+" strip whitespace
 autocmd BufWritePre * :%s/\s\+$//e
+
+" set my style
 set backspace=2
 set modeline
 set modelines=5
