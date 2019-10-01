@@ -55,5 +55,5 @@ set completeopt-=preview
 
 let g:ctrlp_working_path_mode = 'r'
 let g:ctrlp_custom_ignore = {
-      \ 'dir': '\v[\/]\.(git|hg)|test\-results|app\/vendor|node_modules|coverage|app\/fonts|app\/img$'
+      \ 'dir': '\v[\/]\.(git|hg)|test\-results|app\/vendor|node_modules|code-coverage-report|app\/fonts|app\/img|262|experiments$'
       \}
