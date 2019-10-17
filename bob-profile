@@ -17,16 +17,27 @@ bind -x '"\C-t": vim_fzf'
 export GIT_MERGE_AUTOEDIT=no
 source /Users/bobevans/code/dotfiles/git-completion.bash
 
+# Looks for a branch based on param
+# then will check it out
+findBranch() {
+  git find $1;
+}
+
+# We use submodules in code, checkout and pull them
+gitCheckout() {
+  git checkout $1 && git submodule update --init --recursive
+}
+
 #git aliases
 alias gf='git fetch --verbose --prune'
 alias gfa='git fetch --all --verbose --prune'
-alias gco='git checkout'
-alias gu='git up'
+alias gco=gitCheckout
+alias gu='git up && git submodule update --init recursive'
 alias gc='git c'
 alias gp='git push -u'
 alias gpf='git push --force-with-lease origin'
 alias gst='git st'
-alias gfb='git find $1'
+alias gfb=findBranch
 alias gbr='git br'
 alias gdv='git diff | vim -'
 
