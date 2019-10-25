@@ -13,6 +13,17 @@ vim "$(fzf)"
 
 bind -x '"\C-t": vim_fzf'
 
+#Open VS Code in working dir
+vscode () {
+    if [[ $# = 0 ]]
+    then
+        open -a "Visual Studio Code"
+    else
+        [[ $1 = /* ]] && F="$1" || F="$PWD/${1#./}"
+        open -a "Visual Studio Code" --args "$F"
+    fi
+}
+
 #git goodies
 export GIT_MERGE_AUTOEDIT=no
 source /Users/bobevans/code/dotfiles/git-completion.bash
@@ -32,7 +43,7 @@ gitCheckout() {
 alias gf='git fetch --verbose --prune'
 alias gfa='git fetch --all --verbose --prune'
 alias gco=gitCheckout
-alias gu='git up && git submodule update --init recursive'
+alias gu='git up && git submodule update --init --recursive'
 alias gc='git c'
 alias gp='git push -u'
 alias gpf='git push --force-with-lease origin'
@@ -41,8 +52,21 @@ alias gfb=findBranch
 alias gbr='git br'
 alias gdv='git diff | vim -'
 
+#CD aliases
+alias ..="cd .."
+alias ...="cd ../.."
+alias .4="cd ../../.."
+alias .5="cd ../../../.."
+alias .6="cd ../../../.."
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+alias code="cd ~/code"
+
 alias ls=exa # ls sucks exa ftw!
 alias mybox="ssh -p49155 bizob2828@bob-pc"
 alias prune_branches="git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -d"
+
+#re source bash_profile
+alias sbp="source ~/.bash_profile"
 export PATH=$PATH:/Users/bobevans/code/gitplus/commands
 eval "$(starship init bash)"
