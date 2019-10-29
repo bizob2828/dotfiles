@@ -30,3 +30,6 @@
   up = "pull --rebase --autostash"
   br = "symbolic-ref --short HEAD"
   cleanup = !git remote prune origin && git gc && git clean -dfx && git stash clear
+
+[submodule]
+	recurse = true
