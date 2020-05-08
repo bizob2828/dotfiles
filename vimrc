@@ -30,6 +30,7 @@ call vundle#begin()
  Plugin 'groenewege/vim-less'
  Plugin 'othree/yajs.vim'
  Plugin 'kien/ctrlp.vim'
+ Plugin 'tpope/vim-commentary'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
