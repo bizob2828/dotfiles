@@ -32,4 +32,6 @@
   cleanup = !git remote prune origin && git gc && git clean -dfx && git stash clear
 
 [submodule]
-	recurse = true
+  recurse = true
+[pull]
+  rebase = true
