@@ -1,3 +1,4 @@
 *.swp
 bob-profile
 gitconfig
+venv

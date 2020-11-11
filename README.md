@@ -2,7 +2,9 @@
 This uses ansible to symlink dotfiles, install deps, configure some stuff...
 
 ```
-pip install ansible
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
 ansible-playbook env.yml
 ```
 
