@@ -12,3 +12,6 @@ ansible-playbook env.yml
 ```
 ansible-lint env.yml
 ```
+
+## Manual steps
+Import `iterm-settings.itermkeymap` into iTerm2
