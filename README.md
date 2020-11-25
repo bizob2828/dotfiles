@@ -14,4 +14,4 @@ ansible-lint env.yml
 ```
 
 ## Manual steps
-Import `iterm-settings.itermkeymap` and `com.googlecode.iterm2.plist` into iTerm2
+Bind winston prefs from `~/Dropbox/mac-stuff`
