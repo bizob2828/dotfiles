@@ -14,4 +14,4 @@ ansible-lint env.yml
 ```
 
 ## Manual steps
-Bind winston prefs from `~/Dropbox/mac-stuff`
+Bind Alfred prefs from `~/Dropbox/mac-stuff/Alfred.alfredpreferences`
