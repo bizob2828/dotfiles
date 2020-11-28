@@ -19,3 +19,4 @@ ansible-lint env.yml
  * Create ssh key: `ssh-keygen -t rsa -b 4096`
  * Install homebrew `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
  * Bind Alfred prefs from `~/Dropbox/mac-stuff/Alfred.alfredpreferences`
+ * [Install Meslo font](https://github.com/powerline/fonts/blob/master/Meslo%20Dotted/Meslo%20LG%20L%20DZ%20Regular%20for%20Powerline.ttf?raw=true), used for font in iTerm2
