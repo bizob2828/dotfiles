@@ -16,45 +16,46 @@ set sw=2
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" let Vundle manage Vundle, required
- Plugin 'gmarik/Vundle.vim'
- Plugin 'scrooloose/nerdtree'
- Plugin 'scrooloose/syntastic'
- Plugin 'tpope/vim-surround'
- Plugin 'jelera/vim-javascript-syntax'
- Plugin 'marijnh/tern_for_vim'
- Plugin 'Valloric/YouCompleteMe'
- Plugin 'groenewege/vim-less'
- Plugin 'othree/yajs.vim'
- Plugin 'kien/ctrlp.vim'
- Plugin 'tpope/vim-commentary'
+" install vim-plug if it does not exist
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+call plug#begin('~/.vim/plugged')
+Plug 'gmarik/Vundle.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-surround'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'groenewege/vim-less'
+Plug 'othree/yajs.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-commentary'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'ajh17/vimcompletesme'
+Plug 'neoclide/coc.nvim'
+Plug 'joukevandermaas/vim-ember-hbs'
+call plug#end()
+
+" coc extensions to auto install
+let g:coc_global_extensions = [
+  \ 'coc-tsserver',
+  \ 'coc-css',
+  \ 'coc-json',
+  \ 'coc-html',
+  \ 'coc-ember',
+  \ 'coc-yaml',
+  \ 'coc-pairs',
+\ ]
+
+" Put your non-Plug stuff after this line
 map <C-l> :NERDTreeToggle<CR>
-let g:ycm_server_keep_logfiles = 1
-let g:ycm_server_use_vim_stdout = 1
-let g:ycm_server_log_level = 'debug'
-let g:ycm_add_preview_to_completeopt=0
-let g:ycm_confirm_extra_conf=0
 set completeopt-=preview
 
 let g:ctrlp_working_path_mode = 'r'
 let g:ctrlp_custom_ignore = {
       \ 'dir': '\v[\/]\.(git|hg)|test\-results|app\/vendor|node_modules|code-coverage-report|app\/fonts|app\/img|262|experiments$'
       \}
+
