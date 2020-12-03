@@ -37,6 +37,7 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'ajh17/vimcompletesme'
 Plug 'neoclide/coc.nvim'
 Plug 'joukevandermaas/vim-ember-hbs'
+Plug 'editorconfig/editorconfig-vim'
 call plug#end()
 
 " coc extensions to auto install
@@ -45,7 +46,6 @@ let g:coc_global_extensions = [
   \ 'coc-css',
   \ 'coc-json',
   \ 'coc-html',
-  \ 'coc-ember',
   \ 'coc-yaml',
   \ 'coc-pairs',
 \ ]
