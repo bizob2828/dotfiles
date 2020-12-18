@@ -62,6 +62,8 @@ alias c="cd ~/code"
 alias h="cd ~/"
 
 alias ls=exa # ls sucks exa ftw!
+alias ln="exa -lsnew" # display long sort by newest
+alias ln="exa -lsold" # display long sort by oldest
 alias mybox="ssh -p49155 bizob2828@bob-pc"
 alias linuxbox="ssh -p49155 bizob2828@linux-box"
 alias prune_branches="git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -d"
