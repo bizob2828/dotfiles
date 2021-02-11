@@ -25,19 +25,17 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'gmarik/Vundle.vim'
-Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
-Plug 'tpope/vim-surround'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'groenewege/vim-less'
 Plug 'othree/yajs.vim'
-Plug 'kien/ctrlp.vim'
-Plug 'tpope/vim-commentary'
 Plug 'mustache/vim-mustache-handlebars'
-Plug 'ajh17/vimcompletesme'
 Plug 'neoclide/coc.nvim'
+Plug 'ajh17/vimcompletesme'
 Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " coc extensions to auto install
@@ -50,12 +48,28 @@ let g:coc_global_extensions = [
   \ 'coc-pairs',
 \ ]
 
-" Put your non-Plug stuff after this line
-map <C-l> :NERDTreeToggle<CR>
-set completeopt-=preview
+" Run FZF based on the cwd & git detection
+" 1. Runs :Files, If cwd is not a git repository
+" 2. Runs :GitFiles <cwd> If root is a git repository
+fun! FzfOmniFiles()
+  " Throws v:shell_error if is not a git directory
+  let git_status = system('git status')
+  if v:shell_error != 0
+    :Files
+  else
+    " Reference examples which made this happen:
+    " https://github.com/junegunn/fzf.vim/blob/master/doc/fzf-vim.txt#L209
+    " https://github.com/junegunn/fzf.vim/blob/master/doc/fzf-vim.txt#L290
+    " --exclude-standard - Respect gitignore
+    " --others - Show untracked git files
+    " dir: getcwd() - Shows file names relative to cwd
+    let git_files_cmd = ":GitFiles --exclude-standard --cached --others"
+    call fzf#vim#gitfiles('--exclude-standard --cached --others', {'dir': getcwd()})
+  endif
+endfun
+nnoremap <silent> <C-g> :call FzfOmniFiles()<CR>
+nnoremap <C-p> :GFiles<CR>
+nnoremap <C-o> :Ag<CR>
 
-let g:ctrlp_working_path_mode = 'r'
-let g:ctrlp_custom_ignore = {
-      \ 'dir': '\v[\/]\.(git|hg)|test\-results|app\/vendor|node_modules|code-coverage-report|app\/fonts|app\/img|262|experiments$'
-      \}
-
+let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.5, 'yoffset': 1, 'border': 'top' } }
+let g:fzf_preview_window = []
