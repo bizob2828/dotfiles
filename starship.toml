@@ -23,3 +23,5 @@ discharging_symbol = "💀"
 
 [aws]
 disabled = true
+
+command_timeout = 1000
