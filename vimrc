@@ -12,6 +12,7 @@ set modelines=5
 set et
 set ts=2
 set sw=2
+set number
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
