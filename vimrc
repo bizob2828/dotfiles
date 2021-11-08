@@ -17,6 +17,7 @@ set number
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+
 " install vim-plug if it does not exist
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
