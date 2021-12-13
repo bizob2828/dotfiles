@@ -70,6 +70,7 @@ alias linuxbox="ssh -p49155 bizob2828@linux-box"
 alias pi-hole="ssh -p49157 pi@pihole"
 alias prune_branches="git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -d"
 alias kill-whale="docker system prune -a --volumes"
+alias stop-contaiers="docker kill $(docker ps -q)"
 alias flush-dns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder && echo \"DNS cache flushed successfully\""
 alias xcode-fix="sudo rm -rf /Library/Developer/CommandLineTools && xcode-select --install"
 
