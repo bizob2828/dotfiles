@@ -23,4 +23,5 @@ ansible-lint env.yml
  * Disable the following keyboard shortcuts:
    * `System Preferences` > `Keyboard` > `Shortcuts` > `Spotlight` > `Show Spotlight Search Field`
    * `System Preferences` > `Keyboard` > `Shortcuts` > `Mission Control` > `Show Desktop`
- * [Enable three-finger drag](https://support.apple.com/en-us/HT204609)
+ * Disable notifications when sharing screen:
+   * `System Preferences` > `Notifications & Focus` > `When mirroring or sharing the display`
