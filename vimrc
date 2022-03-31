@@ -48,6 +48,7 @@ let g:coc_global_extensions = [
   \ 'coc-html',
   \ 'coc-yaml',
   \ 'coc-pairs',
+  \ 'coc-spell-checker',
 \ ]
 
 " Run FZF based on the cwd & git detection
@@ -70,8 +71,11 @@ fun! FzfOmniFiles()
   endif
 endfun
 nnoremap <silent> <C-g> :call FzfOmniFiles()<CR>
+" ctrl+p searches all files in git repo
 nnoremap <C-p> :GFiles<CR>
+" ctrl+i searches all files from cwd down
 nnoremap <C-i> :Files<CR>
+" ctrl+o searches files with silversearcher
 nnoremap <C-o> :Ag<CR>
 " Enable ctrl+c, ctrl+x, ctrl+x
 " to copy, cut, paste whilst in Visual Mode
@@ -79,5 +83,10 @@ vmap <C-c> "+yi<ESC>
 vmap <C-x> "+c<ESC>
 vmap <C-v> c<ESC>"+p<ESC>
 imap <C-v> <C-r><C-o>+
+" Configure the fuzzy search window
 let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.5, 'yoffset': 1, 'border': 'top' } }
 let g:fzf_preview_window = []
+" Map \+a to load spell checker suggestions
+vmap <leader>a <Plug>(coc-codeaction-selected)
+nmap <leader>a <Plug>(coc-codeaction-selected)
+
