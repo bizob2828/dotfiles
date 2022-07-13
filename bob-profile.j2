@@ -1,8 +1,10 @@
 # vim:syntax=sh filetype=sh
 export EDITOR=vim
+NVM_SH="$HOMEBREW_PREFIX/opt/nvm/nvm.sh"
+NVM_BASH="$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion"
 export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+  [ -s $NVM_SH ] && . $NVM_SH  # This loads nvm
+  [ -s $NVM_BASH ] && . $NVM_BASH # This loads nvm bash_completion
 
 # loads fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
