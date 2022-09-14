@@ -26,6 +26,7 @@
   undo = reset --hard HEAD
   uncommit = reset HEAD~
   c = commit -m
+  jc="!f() { git commit -m \"NEWRELIC-$1\"; }; f"
   ca = commit --ammend -C HEAD
   up = "pull --rebase --autostash"
   br = "symbolic-ref --short HEAD"

@@ -34,6 +34,9 @@ source {{ ansible_user_dir }}/code/dotfiles/git-completion.bash
 # silence OSX catalina error
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
+# Go stuff
+export PATH="$HOMEBREW_PREFIX/bin/go:$PATH"
+
 # Looks for a branch based on param
 # then will check it out
 findBranch() {
@@ -46,6 +49,7 @@ alias gfa='git fetch --all --verbose --prune'
 alias gco='git checkout'
 alias gu='git up'
 alias gc='git c'
+alias gjc='git jc'
 alias gp='git push -u'
 alias gpf='git push --force-with-lease origin'
 alias gst='git st'
