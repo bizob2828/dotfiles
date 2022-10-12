@@ -3,7 +3,7 @@ au BufRead,BufNewFile *.a set filetype=perl
 au BufRead,BufNewFile *.t set filetype=perl
 
 " strip whitespace
-autocmd BufWritePre * :%s/\s\+$//e
+"autocmd BufWritePre * :%s/\s\+$//e
 
 " set my style
 set backspace=2
