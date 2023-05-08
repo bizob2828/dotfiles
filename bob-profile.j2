@@ -80,6 +80,10 @@ alias kill-whale="docker system prune -a --volumes"
 alias stop-contaiers='docker kill $(docker ps -q)'
 alias flush-dns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder && echo \"DNS cache flushed successfully\""
 alias xcode-fix="sudo rm -rf /Library/Developer/CommandLineTools && xcode-select --install"
+findPort() {
+  sudo lsof -i -P | grep LISTEN | grep ":$1"
+}
+alias open-port=findPort
 
 #re source bash_profile
 alias sbp="source ~/.bash_profile"
