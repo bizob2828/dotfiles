@@ -40,6 +40,15 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 call plug#end()
 
+" use <tab> to trigger completion and navigate to the next complete item
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" use <tab> to confirm completion
+inoremap <expr> <tab> coc#pum#visible() ? coc#pum#confirm() : "\<Tab>"
+
 " coc extensions to auto install
 let g:coc_global_extensions = [
   \ 'coc-tsserver',
