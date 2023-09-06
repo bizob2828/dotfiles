@@ -33,7 +33,6 @@ Plug 'groenewege/vim-less'
 Plug 'othree/yajs.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'ajh17/vimcompletesme'
 Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
