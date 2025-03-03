@@ -1,6 +1,7 @@
 syntax on
 au BufRead,BufNewFile *.a set filetype=perl
 au BufRead,BufNewFile *.t set filetype=perl
+autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 
 " strip whitespace
 "autocmd BufWritePre * :%s/\s\+$//e
@@ -37,6 +38,7 @@ Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 " use <tab> to trigger completion and navigate to the next complete item
@@ -51,6 +53,7 @@ inoremap <expr> <tab> coc#pum#visible() ? coc#pum#confirm() : "\<Tab>"
 " coc extensions to auto install
 let g:coc_global_extensions = [
   \ 'coc-tsserver',
+  \ 'coc-go',
   \ 'coc-css',
   \ 'coc-json',
   \ 'coc-html',
