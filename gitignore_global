@@ -6,14 +6,11 @@
 Icon
 Thumbs.db
 ehthumbs.db
-*.swp
-*.swo
-*.swm
-*.swn
+*.sw*
 *.orig
 *~
 \#*\#
 /tags
 /.bundle/
 .vscode
-
+.claude

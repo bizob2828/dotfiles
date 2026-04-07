@@ -38,6 +38,19 @@
 			<key>Text</key>
 			<string>14E925A8-7075-4220-9B67-3D25EED4D47C</string>
 		</dict>
+		<key>0xd-0x20000-0x24</key>
+		<dict>
+			<key>Action</key>
+			<integer>12</integer>
+			<key>Keycode</key>
+			<integer>13</integer>
+			<key>Modifiers</key>
+			<integer>131072</integer>
+			<key>Text</key>
+			<string>\n</string>
+			<key>Version</key>
+			<integer>1</integer>
+		</dict>
 		<key>0xf700-0x300000</key>
 		<dict>
 			<key>Action</key>
@@ -494,7 +507,7 @@
 	<key>Print In Black And White</key>
 	<true/>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>

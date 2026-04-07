@@ -2,6 +2,7 @@ syntax on
 au BufRead,BufNewFile *.a set filetype=perl
 au BufRead,BufNewFile *.t set filetype=perl
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
+autocmd BufNewFile,BufRead *.py setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
 
 " strip whitespace
 "autocmd BufWritePre * :%s/\s\+$//e
@@ -39,7 +40,12 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'github/copilot.vim'
+Plug 'DanBradbury/copilot-chat.vim'
 call plug#end()
+
+" Used to allow copilot chat to work in vim
+filetype plugin indent on
 
 " use <tab> to trigger completion and navigate to the next complete item
 function! CheckBackspace() abort
@@ -101,3 +107,8 @@ let g:fzf_preview_window = []
 vmap <leader>a <Plug>(coc-codeaction-selected)
 nmap <leader>a <Plug>(coc-codeaction-selected)
 
+" Open a new Cpilot Chat window
+nnoremap <leader>cc :CopilotChatOpen<CR>
+
+" Add visual selection to copilot window
+vmap <leader>a <Plug>CopilotChatAddSelection
