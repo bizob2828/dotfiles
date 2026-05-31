@@ -26,7 +26,7 @@ ansible-playbook env.yml
 ## First Time Run Post Install Steps 
  * [Remap Caps lock to escape](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwig-dmL3KPtAhXvt1kKHX9aDocQFjACegQIBRAC&url=https%3A%2F%2Fwww.jeffgeerling.com%2Fblog%2F2017%2Fremapping-caps-lock-key-escape-macos-sierra&usg=AOvVaw3GYqMsd5tKKMHw73AY_tMf)
  * Create ssh key: `ssh-keygen -t rsa -b 4096`
- * Generate [gpg key](https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key) and add to GitHub.
+ * `gpg --import ~/Dropbox/Public/gpg-keys`
  * Manually install [Dozer](https://github.com/Mortennn/Dozer/releases), [Tiley](https://github.com/yusuke/tiley)
  * Tiley hot keys: `shift` + `cmd` + `space` to open. `F` for full screen, `R` for right, and `L` for left.
  * Bind Alfred prefs from `~/Dropbox/mac-stuff/Alfred.alfredpreferences`
@@ -38,3 +38,4 @@ ansible-playbook env.yml
  * Disable notifications when sharing screen:
    * `System Preferences` > `Notifications & Focus` > `When mirroring or sharing the display`
  * Set up Alfred, Amphetamine, Divvy, and Itsycal to `Open at Login`: `System Preferences` > `General` > `Login Items` 
+ * Add `bob-pc`, `linux-box`, and `pihole` to `/etc/hosts`.
