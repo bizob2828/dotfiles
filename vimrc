@@ -40,8 +40,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'github/copilot.vim'
-Plug 'DanBradbury/copilot-chat.vim'
 call plug#end()
 
 " Used to allow copilot chat to work in vim
@@ -107,8 +105,3 @@ let g:fzf_preview_window = []
 vmap <leader>a <Plug>(coc-codeaction-selected)
 nmap <leader>a <Plug>(coc-codeaction-selected)
 
-" Open a new Cpilot Chat window
-nnoremap <leader>cc :CopilotChatOpen<CR>
-
-" Add visual selection to copilot window
-vmap <leader>a <Plug>CopilotChatAddSelection
