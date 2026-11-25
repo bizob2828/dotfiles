@@ -29,7 +29,7 @@ vscode () {
 
 #git goodies
 export GIT_MERGE_AUTOEDIT=no
-source {{ ansible_user_dir }}/code/dotfiles/git-completion.bash
+source {{ ansible_facts["user_dir"] }}/code/dotfiles/git-completion.bash
 
 # silence OSX catalina error
 export BASH_SILENCE_DEPRECATION_WARNING=1
@@ -87,5 +87,5 @@ alias open-port=findPort
 
 #re source bash_profile
 alias sbp="source ~/.bash_profile"
-export PATH=$PATH:{{ ansible_user_dir }}/code/gitplus/commands
+export PATH=$PATH:{{ ansible_facts["user_dir"] }}/code/gitplus/commands
 eval "$(starship init bash)"

@@ -6,7 +6,7 @@
   helper = osxkeychain
 
 [core]
-  excludesfile = {{ ansible_user_dir }}/.gitignore_global
+  excludesfile = {{ ansible_facts["user_dir"] }}/.gitignore_global
 
 [hub]
   protocol = https
